@@ -46,8 +46,42 @@ export const RepoName = styled.div`
   }
 `;
 
+export const DescriptionContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const RepoDescription = styled.div`
   font-family: "Roboto", sans-serif;
   color: #555252;
   font-size: 14px;
+  margin-top: 8px;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+`;
+
+export const Icon = styled.img`
+  height: 15px;
+  width: 15px;
+  padding-right: 3px;
+  margin-top: 1px;
+`;
+
+export const ButtonText = styled.div`
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  padding-bottom: 2px;
+`;
+
+export const Button = styled.div`
+  display: flex;
+  padding: 7px 10px;
+  background-color: #e6ebf1;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 5px;
 `;
