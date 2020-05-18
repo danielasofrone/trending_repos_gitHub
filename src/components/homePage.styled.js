@@ -30,6 +30,7 @@ export const RepoContainer = styled.div`
   box-sizing: border-box;
   padding-top: 24px !important;
   padding-bottom: 24px !important;
+  margin-right: 20px;
 `;
 
 export const RepoName = styled.div`
@@ -56,6 +57,8 @@ export const RepoDescription = styled.div`
   color: #555252;
   font-size: 14px;
   margin-top: 8px;
+  padding-right: 8px;
+  white-space: normal;
 `;
 
 export const ButtonContainer = styled.div`
@@ -79,6 +82,7 @@ export const ButtonText = styled.div`
 
 export const Button = styled.div`
   display: flex;
+  height: 20px;
   padding: 7px 10px;
   background-color: #e6ebf1;
   cursor: pointer;
