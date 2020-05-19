@@ -5,6 +5,21 @@ export const Wrapper = styled.main`
   height: 100%;
 `;
 
+export const LoadingContainer = styled.div`
+  display: flex;
+  margin-top: 200px;
+`;
+
+export const Loading = styled.div`
+  position: relative;
+  position: relative;
+  margin: 0 auto;
+  h2 {
+    font-family: "Roboto", sans-serif;
+    color: #555252;
+  }
+`;
+
 export const ContentWrapper = styled.li`
   display: flex;
   margin-top: 30px;
