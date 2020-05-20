@@ -4,15 +4,16 @@ import PropTypes from "prop-types";
 import star from "../../assets/star.svg";
 
 const Repo = ({ html_url, name, description }) => {
-  const localRepo = `Star${html_url}`;
-  const [starText, setStarText] = useState(localStorage.getItem(localRepo));
+  const starredStorage = `star_${html_url}`;
+  const [isStarred, setStarred] = useState(
+    localStorage.getItem(starredStorage)
+  );
 
   useEffect(() => {
-    localStorage.setItem(localRepo, starText);
-  }, [localRepo, starText]);
-
+    localStorage.setItem(starredStorage, isStarred);
+  }, [starredStorage, isStarred]);
   const toggleStar = () => {
-    setStarText((starText) => (starText === "Star" ? "Unstar" : "Star"));
+    setStarred((isStarred) => (isStarred === "true" ? "false" : "true"));
   };
 
   return (
@@ -25,18 +26,18 @@ const Repo = ({ html_url, name, description }) => {
           <S.RepoDescription>{description}</S.RepoDescription>
           <S.Button onClick={() => toggleStar()}>
             <S.Icon src={star}></S.Icon>
-            <S.ButtonText>{starText}</S.ButtonText>
+            <S.ButtonText>
+              {isStarred === "true" ? "Unstar" : "Star"}
+            </S.ButtonText>
           </S.Button>
         </S.DescriptionContainer>
       </S.RepoContainer>
     </>
   );
 };
-
 Repo.propTypes = {
   html_url: PropTypes.string,
   name: PropTypes.string,
   description: PropTypes.string,
 };
-
 export default Repo;
