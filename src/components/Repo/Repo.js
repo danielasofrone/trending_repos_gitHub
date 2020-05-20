@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "../HomePage/homePage.styled";
 import PropTypes from "prop-types";
 import star from "../../assets/star.svg";
 
 const Repo = ({ html_url, name, description }) => {
-  const [starText, setStarText] = useState("Star");
+  const [starText, setStarText] = useState(localStorage.getItem("Star"));
+
+  useEffect(() => {
+    localStorage.setItem("Star", starText);
+  }, [starText]);
 
   const toggleStar = () => {
-    setStarText(starText === "Star" ? "Unstar" : "Star");
+    setStarText((starText) => (starText === "Star" ? "Unstar" : "Star"));
   };
+
   return (
     <>
       <S.RepoContainer>
@@ -17,7 +22,7 @@ const Repo = ({ html_url, name, description }) => {
         </S.RepoName>
         <S.DescriptionContainer>
           <S.RepoDescription>{description}</S.RepoDescription>
-          <S.Button onClick={toggleStar}>
+          <S.Button onClick={() => toggleStar()}>
             <S.Icon src={star}></S.Icon>
             <S.ButtonText>{starText}</S.ButtonText>
           </S.Button>
