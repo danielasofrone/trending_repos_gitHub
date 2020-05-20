@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 import star from "../../assets/star.svg";
 
 const Repo = ({ html_url, name, description }) => {
-  const [starText, setStarText] = useState(localStorage.getItem("Star"));
+  const localRepo = `Star${html_url}`;
+  const [starText, setStarText] = useState(localStorage.getItem(localRepo));
 
   useEffect(() => {
-    localStorage.setItem("Star", starText);
-  }, [starText]);
+    localStorage.setItem(localRepo, starText);
+  }, [localRepo, starText]);
 
   const toggleStar = () => {
     setStarText((starText) => (starText === "Star" ? "Unstar" : "Star"));
