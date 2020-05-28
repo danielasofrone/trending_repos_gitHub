@@ -13,6 +13,7 @@ const Repo = ({ html_url, name, description, stargazers_count }) => {
   useEffect(() => {
     localStorage.setItem(starredStorage, isStarred);
   }, [starredStorage, isStarred]);
+
   const toggleStar = () => {
     setStarred((isStarred) => (isStarred === "true" ? "false" : "true"));
   };

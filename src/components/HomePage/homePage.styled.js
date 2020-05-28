@@ -36,10 +36,10 @@ export const TitleContainer = styled.div`
 
 export const RepoContainer = styled.li`
   text-align: left;
-  border-bottom: 1px solid #e1e4e8 !important;
+  border-bottom: 1px solid #e1e4e8;
   box-sizing: border-box;
-  padding-top: 24px !important;
-  padding-bottom: 24px !important;
+  padding-top: 24px;
+  padding-bottom: 24px;
   margin-right: 20px;
   list-style-type: none;
 `;
